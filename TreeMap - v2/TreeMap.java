@@ -15,7 +15,7 @@ public class TreeMap {
 
 	public void procArbol(Nodo nodo, int x, int y, int largo, int ancho, boolean modificarX){
 		if(nodo.hijos == null){
-			interfaz.dibujarPanel(nodo.nombre, x + 1, y + 1, largo - 1, ancho - 1);
+			interfaz.dibujarPanel(nodo.nombre, x, y, largo, ancho);
 			System.out.println("Llegue a la hoja: " + nodo.nombre);
 		}else{
 			ArrayList<Nodo> hijosNodo = nodo.hijos;

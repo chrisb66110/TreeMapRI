@@ -6,7 +6,7 @@ La clase CuatroEnRaya es la encargada de iniciar la aplicacion
 public class TreeMap {
 
 	int tamano = 800;
-	int arbolActual = 3;
+	int arbolActual = 2;
 	Interfaz interfaz;
 
 	public TreeMap(){
@@ -26,13 +26,13 @@ public class TreeMap {
 			for(int i = 0; i < hijosNodo.size(); i++){
 				Nodo nodoHijo = hijosNodo.get(i);
 				if(modificarX){
-					nuevoLargo = (int)( ((double)largo - (double)x) * nodoHijo.getPorcentaje() );
+					nuevoLargo = (int)( ((double)largo /*- (double)x*/) * nodoHijo.getPorcentaje() );
 					procArbol( nodoHijo , nuevoX, nuevoY, nuevoLargo, nuevoAncho, !modificarX);
-					nuevoX = nuevoLargo;
+					nuevoX += nuevoLargo;
 				}else{
-					nuevoAncho = (int)( ((double)ancho - (double)y) * nodoHijo.getPorcentaje() );
+					nuevoAncho = (int)( ((double)ancho /*- (double)y*/) * nodoHijo.getPorcentaje() );
 					procArbol( nodoHijo , nuevoX, nuevoY, nuevoLargo, nuevoAncho, !modificarX);
-					nuevoY = nuevoAncho;
+					nuevoY += nuevoAncho;
 				}
 			}
 		}

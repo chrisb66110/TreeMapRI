@@ -47,11 +47,15 @@ public class Interfaz extends JFrame {
     Encargado de crear el panel para que el jugador seleecione el tipo de partida deseado
     No retorna
      */
-    public void dibujarPanel(String texto, int x, int y, int ancho, int alto) {
+    public void dibujarPanel(String texto, int x, int y, int largo, int ancho) {
         System.out.println("Cree el boton: " + texto);
+        System.out.println("X: " + x);
+        System.out.println("Y: " + y);
+        System.out.println("LARGO: " + largo);
+        System.out.println("ANCHO: " + ancho);
         JButton botonIndividual = new JButton();
         botonIndividual.setText(texto);
-        botonIndividual.setBounds(x, y, ancho, alto);
+        botonIndividual.setBounds(x, y, largo, ancho);
         this.panel.add(botonIndividual);
         this.panel.repaint();
         this.panel.repaint();

@@ -6,7 +6,7 @@ La clase CuatroEnRaya es la encargada de iniciar la aplicacion
 public class TreeMap {
 
 	int tamano = 800;
-	int arbolActual = 2;
+	int arbolActual = 5;
 	Interfaz interfaz;
 
 	public TreeMap(){
@@ -14,6 +14,12 @@ public class TreeMap {
 	}
 
 	public void procArbol(Nodo nodo, int x, int y, int largo, int ancho, boolean modificarX){
+		System.out.println("Entro nodo: " + nodo.nombre);
+		System.out.println("Entro x: " + x);
+		System.out.println("Entro y: " + y);
+		System.out.println("Entro largo: " + largo);
+		System.out.println("Entro ancho: " + ancho);
+		System.out.println("Entro modificarX: " + modificarX);
 		if(nodo.hijos == null){
 			interfaz.dibujarPanel(nodo.nombre, x, y, largo, ancho);
 			System.out.println("Llegue a la hoja: " + nodo.nombre);
@@ -26,10 +32,14 @@ public class TreeMap {
 			for(int i = 0; i < hijosNodo.size(); i++){
 				Nodo nodoHijo = hijosNodo.get(i);
 				if(modificarX){
+					System.out.println("1Envio a " + nodoHijo.nombre);
+					System.out.println("1Envio porcentaje: " + nodoHijo.getPorcentaje());
 					nuevoLargo = (int)( ((double)largo /*- (double)x*/) * nodoHijo.getPorcentaje() );
 					procArbol( nodoHijo , nuevoX, nuevoY, nuevoLargo, nuevoAncho, !modificarX);
 					nuevoX += nuevoLargo;
 				}else{
+					System.out.println("2Envio a " + nodoHijo.nombre);
+					System.out.println("2Envio porcentaje: " + nodoHijo.getPorcentaje());
 					nuevoAncho = (int)( ((double)ancho /*- (double)y*/) * nodoHijo.getPorcentaje() );
 					procArbol( nodoHijo , nuevoX, nuevoY, nuevoLargo, nuevoAncho, !modificarX);
 					nuevoY += nuevoAncho;

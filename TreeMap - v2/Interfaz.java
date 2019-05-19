@@ -66,6 +66,7 @@ public class Interfaz extends JFrame {
                 JButton botonIndividual = new JButton();
                 botonIndividual.setText(texto);
                 botonIndividual.setBounds(x, y, largo, ancho);
+                botonIndividual.setBackground(Color.ORANGE);
                 panel.add(botonIndividual);
                 panel.repaint();
                 panel.repaint();

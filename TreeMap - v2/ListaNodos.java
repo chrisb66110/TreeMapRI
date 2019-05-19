@@ -20,6 +20,9 @@ public class ListaNodos {
 			case 4:
 				crearArbol4();
 				break;
+			case 5:
+				crearArbol5();
+				break;
 			default:
 				this.arbol = null;
 		}
@@ -268,6 +271,56 @@ public class ListaNodos {
 		this.arbol.add(nodoE);
 		this.arbol.add(nodoF);
 		this.arbol.add(nodoG);
+	}
+
+	public void crearArbol5(){
+		Nodo nodoD = new Nodo("D", null, 1, 7);
+
+		Nodo nodoH = new Nodo("H", null, 1, 2);
+
+		Nodo nodoI = new Nodo("I", null, 1, 2);
+		
+		ArrayList<Nodo> hijosC = new ArrayList<Nodo>();
+		hijosC.add(nodoH);
+		hijosC.add(nodoI);
+		Nodo nodoC = new Nodo("C", hijosC, 2, 7);
+
+		Nodo nodoJ = new Nodo("J", null, 1, 2);
+		Nodo nodoK = new Nodo("K", null, 1, 2);
+
+		ArrayList<Nodo> hijosF = new ArrayList<Nodo>();
+		hijosF.add(nodoJ);
+		hijosF.add(nodoK);
+		Nodo nodoF = new Nodo("F", hijosF, 2, 4);
+		
+		Nodo nodoE = new Nodo("E", null, 1, 4);
+
+		Nodo nodoG = new Nodo("G", null, 1, 4);
+		
+		ArrayList<Nodo> hijosB = new ArrayList<Nodo>();
+		hijosB.add(nodoE);
+		hijosB.add(nodoF);
+		hijosB.add(nodoG);
+		Nodo nodoB = new Nodo("B", hijosB, 4, 7);
+		
+		ArrayList<Nodo> hijosA = new ArrayList<Nodo>();
+		hijosA.add(nodoB);
+		hijosA.add(nodoC);
+		hijosA.add(nodoD);
+		Nodo nodoA = new Nodo("A", hijosA, 7, 7);
+
+		this.arbol = new ArrayList<Nodo>();
+		this.arbol.add(nodoA);
+		this.arbol.add(nodoB);
+		this.arbol.add(nodoC);
+		this.arbol.add(nodoD);
+		this.arbol.add(nodoE);
+		this.arbol.add(nodoF);
+		this.arbol.add(nodoG);
+		this.arbol.add(nodoH);
+		this.arbol.add(nodoI);
+		this.arbol.add(nodoJ);
+		this.arbol.add(nodoK);
 	}
 
 }

@@ -2,28 +2,25 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.util.Random; 
 
 /*
-La clase Interfaz es la encargada de tener los elementos necesario para la comunicacion con el usuario
+La clase Interfaz es la encargada de dibujar el treemap
  */
 public class Interfaz extends JFrame {
 
-    JFrame ventana;//ventana del juego
-    JPanel panel;
+    JFrame ventana;// Ventana del juego
+    JPanel panel;// Panel del juego
     
     /*
-    Recibe la instancia(Juego) con la que se quiere comunicar
-    Encargado de construir instancias de Interfaz con los atributos llenos
-    No retorna
+    Contructor, recibe el tamano de la ventana
      */
     public Interfaz(int tamano) {
         this.ventana(tamano);
     }
 
     /*
-    No recibe
-    Encargado de crear la ventana del juego
-    No retorna
+    Crea la ventana y agrega el panel
      */
     public void ventana(int tamano) {
         this.ventana = new JFrame();
@@ -37,51 +34,31 @@ public class Interfaz extends JFrame {
 
         this.panel = new JPanel();
         this.panel.setBounds( tamano, tamano, 0, 0);
-        //this.panel.setBackground(Color.GREEN);
         this.ventana.add(panel);
         this.ventana.setContentPane(panel);
     }
 
     /*
-    Recibe la direccion(String) de la imagen del panel
-    Encargado de crear el panel para que el jugador seleecione el tipo de partida deseado
-    No retorna
+    Dibuja los botones en el panel
      */
     public void dibujarPanel(String texto, int x, int y, int largo, int ancho) {
-        System.out.println("Cree el boton: " + texto);
-        System.out.println("X: " + x);
-        System.out.println("Y: " + y);
-        System.out.println("LARGO: " + largo);
-        System.out.println("ANCHO: " + ancho);
-        /*JButton botonIndividual = new JButton();
-        botonIndividual.setText(texto);
-        botonIndividual.setBounds(x, y, largo, ancho);
-        this.panel.add(botonIndividual);
-        this.panel.repaint();
-        this.panel.repaint();*/
-
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+            	Random rand = new Random(); 
+            	float r = rand.nextFloat(); 
+				float g = rand.nextFloat(); 
+				float b = rand.nextFloat();
+				Color randomColor = new Color(r, g, b);
                 JButton botonIndividual = new JButton();
                 botonIndividual.setText(texto);
                 botonIndividual.setBounds(x, y, largo, ancho);
-                botonIndividual.setBackground(Color.ORANGE);
+                botonIndividual.setBackground(randomColor);
                 panel.add(botonIndividual);
                 panel.repaint();
                 panel.repaint();
-
-                /*ventana.setTitle("Simulación - Solicitud de datos");
-                ventana.setContentPane( panel );
-                ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                ventana.pack();
-                ventana.setVisible(true);*/
             }
         });
-        //this.panel.updateUI();
-        //this.ventana.paintAll(ventana.getGraphics());
-        //this.ventana.add(panel);
-        //this.ventana.setContentPane(panel);
     }
 
 }

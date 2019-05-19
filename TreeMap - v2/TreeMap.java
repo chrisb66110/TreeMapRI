@@ -1,18 +1,24 @@
 import java.awt.Color;
 import java.util.ArrayList;
 /*
-La clase CuatroEnRaya es la encargada de iniciar la aplicacion
+Clase encargada de la logica de la aplicacion
  */
 public class TreeMap {
 
-	int tamano = 800;
-	int arbolActual = 5;
-	Interfaz interfaz;
+	int tamano = 800; //Tamano de la ventana
+	int arbolActual = 5; //Arbol a utilizar
+	Interfaz interfaz; //Interfaz
 
+	/*
+	Constructor
+	*/
 	public TreeMap(){
 		interfaz = new Interfaz(tamano);
 	}
 
+	/*
+	Metodo que procesa el arbol para calcular los tamanos y posiciones
+	*/
 	public void procArbol(Nodo nodo, int x, int y, int largo, int ancho, boolean modificarX){
 		System.out.println("Entro nodo: " + nodo.nombre);
 		System.out.println("Entro x: " + x);
@@ -48,12 +54,18 @@ public class TreeMap {
 		}
 	}
 
+	/*
+	Metodo para inciar la logica del sistema
+	*/
 	public void iniciar(){
 		ListaNodos listaNodos = new ListaNodos(this.arbolActual);
 		ArrayList<Nodo> arbol = listaNodos.getArbol();
 		procArbol(arbol.get(0), 0, 0, this.tamano, this.tamano, true);
 	}
 
+	/*
+	Metodo que inicia el programa
+	*/
 	public static void main(String[] args) {
 	    TreeMap treemap = new TreeMap();
 	    treemap.iniciar();

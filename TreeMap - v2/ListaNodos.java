@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 /*
-Arbol
+Arboles
  */
 public class ListaNodos {
 
-	ArrayList<Nodo> arbol;
+	ArrayList<Nodo> arbol;//Lista de nodos del arbol.
 
+	// Constructor, recibe el numero de arbol que quiere crear.
 	public ListaNodos(int arbol){
 		switch(arbol){
 			case 1:
@@ -28,10 +29,16 @@ public class ListaNodos {
 		}
 	}
 
+	/*
+	Metodo que retorna el arbol
+	*/
 	public ArrayList<Nodo> getArbol(){
 		return this.arbol;
 	}
 
+	/*
+	Metodo que crea el arbol 1
+	*/
 	public void crearArbol1(){
 		Nodo nodoG = new Nodo("G", null, 1, 2);
 		
@@ -66,6 +73,9 @@ public class ListaNodos {
 		this.arbol.add(nodoG);
 	}
 
+	/*
+	Metodo que crea el arbol 2
+	*/
 	public void crearArbol2(){
 		Nodo nodoY = new Nodo("Y", null, 1, 2);
 		
@@ -183,6 +193,9 @@ public class ListaNodos {
 		this.arbol.add(nodoZ);
 	}
 
+	/*
+	Metodo que crea el arbol 3
+	*/
 	public void crearArbol3(){
 		Nodo nodoG = new Nodo("G", null, 1, 2);
 		
@@ -239,6 +252,9 @@ public class ListaNodos {
 		this.arbol.add(nodoK);
 	}
 
+	/*
+	Metodo que crea el arbol 4
+	*/
 	public void crearArbol4(){
 		Nodo nodoG = new Nodo("G", null, 1, 2);
 		
@@ -273,6 +289,9 @@ public class ListaNodos {
 		this.arbol.add(nodoG);
 	}
 
+	/*
+	Metodo que crea el arbol 5
+	*/
 	public void crearArbol5(){
 		Nodo nodoD = new Nodo("D", null, 1, 7);
 
